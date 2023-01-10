@@ -3,7 +3,7 @@ library(worldfootballR)
 library(extrafont)
 
 # Scrape data
-bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:11))
+bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:15))
 
 # Select columns and create a second one for team
 bun_table <- bun_table %>%
