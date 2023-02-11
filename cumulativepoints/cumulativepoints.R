@@ -1,9 +1,13 @@
 library(tidyverse)
 library(worldfootballR)
-library(extrafont)
+library(showtext)
 
 # Scrape data
-bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:15))
+bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:19))
+
+# Add custom font
+font_google_add("Kanit", "kanit")
+showtext_auto()
 
 # Select columns and create a second one for team
 bun_table <- bun_table %>%
@@ -18,22 +22,23 @@ df <- rbind(temp, bun_table)
 # Plot data
 ggplot(df, aes(Match, Points, group = Team)) +
   geom_line(data = df[,2:4], aes(Match, Points, group = Team2), color = "grey70", alpha = 0.1) +
-  geom_line(color = "#ffc504", size = 1) +
-  scale_x_continuous(breaks = c(2, 6, 10)) +
+  geom_line(color = "#e3170a", size = 0.4) +
+  scale_x_continuous(breaks = seq(2, 20, 4)) +
   facet_wrap(~ Team) +
   labs(title = "Number of points over time in the Bundesliga",
        subtitle = "Cumulative sum of points per matchday 2022-23 season",
        caption = "Data: Transfermarkt | Viz: Evan Gower",
-       x = "Points",
-       y = "Matchday") +
-  theme(plot.background = element_rect(fill = "grey15", color = "grey15"),
-        panel.background = element_rect(fill = "grey15", color = "grey15"),
-        text = element_text(family = "Consolas Bold", color = "white"),
-        plot.title = element_text(family = "Consolas Bold", color = "white", size = 16),
-        plot.subtitle = element_text(family = "Consolas Bold", color = "white"),
-        axis.text = element_text(color = "white", size = 6),
+       x = "Matchday",
+       y = "Points") +
+  theme(plot.background = element_rect(fill = "#fafafa", color = "#fafafa"),
+        panel.background = element_rect(fill = "#fafafa", color = "#fafafa"),
+        text = element_text(family = "kanit", color = "black"),
+        plot.title = element_text(family = "kanit", color = "black", size = 24),
+        plot.subtitle = element_text(family = "kanit", color = "black", size = 14),
+        plot.caption = element_text(family = "kanit", color = "black, size = 7.35),
+        axis.text = element_text(color = "black", size = 8),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
-        strip.background = element_rect(fill = "#aa3b45"),
-        strip.text = element_text(color = "white"))
+        strip.background = element_rect(fill = "#fafafa"),
+        strip.text = element_text(color = "black", size = 10"))
         
