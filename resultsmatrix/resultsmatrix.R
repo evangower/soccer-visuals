@@ -32,14 +32,15 @@ league_table <- combine_df %>%
   mutate(gd = gf-ga) %>%
   group_by(team) %>%
   summarize(mp = n(), wins = sum(gd > 0), draws = sum(gd == 0), losses = sum(gd < 0),
-            gf = sum(gf), ga = sum(ga), gd = sum(gf - ga))
+            pts = sum(draws + (wins * 3)), gf = sum(gf), ga = sum(ga), gd = sum(gf - ga))
+  arrange(desc(pts), desc(gd))
 
 # View league table
 league_table
 
 # Order teams in datafram by league table
 df$HomeTeam <- factor(df$HomeTeam, levels = rev(league_table$team))
-df$AwayTeam <- factor(df$AwayTeam, levels = rev(League_table$team))
+df$AwayTeam <- factor(df$AwayTeam, levels = rev(league_table$team))
 
 # Plot data
 ggplot(df, aes(HomeTeam, AwayTeam, fill = FTR)) +
