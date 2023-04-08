@@ -3,10 +3,10 @@ library(worldfootballR)
 library(showtext)
 
 # Scrape data
-bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:19))
+bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:27))
 
 # Add custom font
-font_google_add("Kanit", "kanit")
+font_add_google("Jost", "jost")
 showtext_auto()
 
 # Select columns and create a second one for team
@@ -23,7 +23,7 @@ df <- rbind(temp, bun_table)
 ggplot(df, aes(Match, Points, group = Team)) +
   geom_line(data = df[,2:4], aes(Match, Points, group = Team2), color = "grey70", alpha = 0.1) +
   geom_line(color = "#e3170a", size = 0.4) +
-  scale_x_continuous(breaks = seq(2, 20, 4)) +
+  scale_x_continuous(breaks = seq(2, 28, 4)) +
   facet_wrap(~ Team) +
   labs(title = "Number of points over time in the Bundesliga",
        subtitle = "Cumulative sum of points per matchday 2022-23 season",
@@ -33,12 +33,11 @@ ggplot(df, aes(Match, Points, group = Team)) +
   theme(plot.background = element_rect(fill = "#fafafa", color = "#fafafa"),
         panel.background = element_rect(fill = "#fafafa", color = "#fafafa"),
         text = element_text(family = "kanit", color = "black"),
-        plot.title = element_text(family = "kanit", color = "black", size = 24),
-        plot.subtitle = element_text(family = "kanit", color = "black", size = 14),
-        plot.caption = element_text(family = "kanit", color = "black, size = 7.35),
+        plot.title = element_text(family = "kanit", color = "black", size = 20),
+        plot.subtitle = element_text(family = "kanit", color = "black", size = 11.5),
+        plot.caption = element_text(family = "kanit", color = "black", size = 7.35),
         axis.text = element_text(color = "black", size = 8),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         strip.background = element_rect(fill = "#fafafa"),
-        strip.text = element_text(color = "black", size = 10"))
-        
+        strip.text = element_text(color = "black", size = 10))
