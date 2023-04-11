@@ -17,6 +17,6 @@ Match result matrix for the 2021-22 Premier League season
 ![](https://github.com/evangower/football-visuals/blob/main/resultsmatrix/resultsmatrix.PNG)
 
 ## [Serie A Goal Difference](https://github.com/evangower/football-visuals/blob/main/serieagdtable/serieagdtable.R)
-Current Serie A Clubs Goals Difference since 2008-09
+Current Serie A clubs goals difference since 2008-09
 
 ![](https://github.com/evangower/football-visuals/blob/main/serieagdtable/serieagdtable.PNG)
