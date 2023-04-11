@@ -22,6 +22,9 @@ count_df <- df %>%
 # Make Season_End_Year a character
 count_df$Season_End_Year <- as.character(count_df$Season_End_Year)
 
+# Set image sizing
+options(repr.plot.width = 8, repr.plot.height = 5)
+
 # Plot data
 ggplot(count_df, aes(Season_End_Year, share, fill = descript)) +
   geom_bar(stat = "identity") +
