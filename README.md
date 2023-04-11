@@ -9,7 +9,7 @@ Cumulative sum of points over the 2022-23 German Bundesliga season
 ## [Match Outcome](https://github.com/evangower/football-visuals/blob/main/eplmatchoutcome/eplmatchoutcome.R)
 Percentage of all match outcomes by fulltime result over the past 10 seasons
 
-![]()
+![](https://github.com/evangower/football-visuals/blob/main/eplmatchoutcome/eplmatchoutcome.PNG)
 
 ## [Results Matrix](https://github.com/evangower/football-visuals/blob/main/resultsmatrix/resultsmatrix.R)
 Match result matrix for the 2021-22 English Premier League season
