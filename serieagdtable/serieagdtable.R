@@ -55,7 +55,7 @@ ggplot(serie_a_latest, aes(season, club, fill = goal_diff)) +
   scale_fill_gradient(low = "#dddddd", high = "#004346", n.breaks = 12) +
   coord_cartesian(expand = FALSE) +
   labs(title = "Italy's Serie A - Goal Difference",
-       subtitle = "Current Serie A Clubs Goals Difference Since 2008-09",
+       subtitle = "Current Serie A Clubs Goal Difference Since 2008-09",
        caption = "Clubs ordered by the GD from Week 29 of the 2022-23 season\n Data: FBref.com | Viz: Evan Gower",
        x = "", y = "") +
   theme_minimal() +
