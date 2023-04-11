@@ -15,3 +15,7 @@ Percentage of all match outcomes by fulltime result in the Premier League over t
 Match result matrix for the 2021-22 Premier League season
 
 ![](https://github.com/evangower/football-visuals/blob/main/resultsmatrix/resultsmatrix.PNG)
+
+## [Serie A Goal Difference](https://github.com/evangower/football-visuals/blob/main/serieagdtable/serieagdtable.R)
+
+![](https://github.com/evangower/football-visuals/blob/main/serieagdtable/serieagdtable.PNG)
