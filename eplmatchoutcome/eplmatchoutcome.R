@@ -16,8 +16,8 @@ count_df <- df %>%
   group_by(Season_End_Year) %>%
   mutate(share = n / sum(n),
          descript = case_when(FTR == 'A' ~ 'Away',
-                              FTR == 'D', 'Draw',
-                              FTR == 'H', 'Home'))
+                              FTR == 'D' ~ 'Draw',
+                              FTR == 'H' ~ 'Home'))
 
 # Make Season_End_Year a character
 count_df$Season_End_Year <- as.character(count_df$Season_End_Year)
@@ -27,7 +27,7 @@ ggplot(count_df, aes(Season_End_Year, share, fill = descript)) +
   geom_bar(stat = "identity") +
   geom_text(data = . %>%
               filter(share > 1), aes(label = percent(share, accuracy = 1L)),
-            family = 'cairo', face = 'bold', size = 0.5, color = "black", position = position_stack(vjust = 0.5)) +
+            family = 'cairo', fontface = 'bold', size = 5, color = "black", position = position_stack(vjust = 0.5)) +
   scale_fill_manual(values = c("#fd9b9d", "#ffee90", "#80d3a9")) +
   labs(title = "Home Teams Win More in the English Premier League",
        subtitle = "Over the past 10 EPL seasons, the home team winning the match was the most likely outcome, which averaged\n at around 40% of all match outcomes. Away only beat home once during this period and draws never hit the 30% mark.",
