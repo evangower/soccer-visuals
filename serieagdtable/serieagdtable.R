@@ -2,6 +2,7 @@
 library(tidyverse)
 library(worldfootballR)
 library(showtext)
+library(ggtext)
 
 font_add_google('Sora', 'sora')
 showtext_auto()
