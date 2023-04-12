@@ -2,12 +2,12 @@ library(tidyverse)
 library(worldfootballR)
 library(showtext)
 
+# Add custom font
+font_add_google("Cairo", "cairo")
+showtext_auto()
+
 # Scrape data
 bun_table <- tm_matchday_table(country_name = "Germany", start_year = "2022", matchday = c(1:27))
-
-# Add custom font
-font_add_google("Jost", "jost")
-showtext_auto()
 
 # Select columns and create a second one for team
 bun_table <- bun_table %>%
@@ -30,14 +30,11 @@ ggplot(df, aes(Match, Points, group = Team)) +
        caption = "Data: Transfermarkt | Viz: Evan Gower",
        x = "Matchday",
        y = "Points") +
-  theme(plot.background = element_rect(fill = "#fafafa", color = "#fafafa"),
-        panel.background = element_rect(fill = "#fafafa", color = "#fafafa"),
-        text = element_text(family = "kanit", color = "black"),
-        plot.title = element_text(family = "kanit", color = "black", size = 20),
-        plot.subtitle = element_text(family = "kanit", color = "black", size = 11.5),
-        plot.caption = element_text(family = "kanit", color = "black", size = 7.35),
+  theme(text = element_text(family = "cairo", color = "black"),
+        plot.title = element_text(family = "cairo", color = "black", size = 20),
+        plot.subtitle = element_text(family = "cairo", color = "black", size = 11.5),
+        plot.caption = element_text(family = "cairo", color = "black", size = 7.35),
         axis.text = element_text(color = "black", size = 8),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
-        strip.background = element_rect(fill = "#fafafa"),
         strip.text = element_text(color = "black", size = 10))
