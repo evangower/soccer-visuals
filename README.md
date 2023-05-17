@@ -6,10 +6,10 @@ Cumulative sum of points over the 2022-23 German Bundesliga season
 
 ![](https://github.com/evangower/football-visuals/blob/main/cumulativepoints/cumulativepoints.PNG)
 
-## [English Championship League Table](https://github.com/evangower/football-visuals/blob/main/engchampionchipleaguetable/eng-championship-gt.R)
+## [English Championship League Table](https://github.com/evangower/football-visuals/blob/main/gtleaguetable/eng-champ-gt.R)
 gt table of the 2022-23 English Championship league table
 
-![](https://github.com/evangower/football-visuals/blob/main/engchampionchipleaguetable/eng-champ-league-table.jpg)
+![](https://github.com/evangower/football-visuals/blob/main/gtleaguetable/gt-league-table.jpg)
 
 ## [Match Outcome](https://github.com/evangower/football-visuals/blob/main/eplmatchoutcome/eplmatchoutcome.R)
 Percentage of all match outcomes by fulltime result in the Premier League over the past 10 seasons
