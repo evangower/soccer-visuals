@@ -1,5 +1,5 @@
-# Football-visuals
-This repository contains code and data visuals for football/soccer analytics I have done.
+# Soccer Visuals
+This repository contains code and data visuals for soccer analysis I have done.
 
 ## [Cumulative Points](https://github.com/evangower/football-visuals/blob/main/cumulativepoints/cumulativepoints.R)
 Cumulative sum of points over the 2022-23 German Bundesliga season
